@@ -27,7 +27,9 @@
                 <td>{{ i + 1 }}</td>
                 <td>{{ stock.name }}</td>
                 <td>{{ stock.price }}</td>
-                <td>{{ stock.rating }}</td>
+                <td>
+                    <app-stars [rating]="stock.rating"></app-stars>
+                </td>
                 <td>{{ stock.desc }}</td>
                 <td>
                     <a class="btn btn-sm btn-warning">
