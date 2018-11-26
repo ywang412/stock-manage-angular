@@ -21,7 +21,6 @@ export class MenuComponent implements OnInit {
             new Menu(1, '首页', 'dashboard'),
             new Menu(2, '股票管理', 'stock')
         ];
-        this.currentMenuId = this.menus[0].id;
     }
 
     nav(menu: Menu) {

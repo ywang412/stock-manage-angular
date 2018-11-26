@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Stock} from '../../model/stock';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-stock-manage',
@@ -10,7 +11,7 @@ export class StockManageComponent implements OnInit {
 
     stocks: Array<Stock>;
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
@@ -21,6 +22,14 @@ export class StockManageComponent implements OnInit {
             new Stock(4, '京东', 4.99, 1.5, '京东，中国自营式电商企业，创始人刘强东担任京东集团董事局主席兼首席执行官。', ['互联网', '电商']),
             new Stock(5, '美团点评', 5.99, 2, '美团点评是中国大陆地区第一个精品团购形式的类Groupon电子商务网站。最初叫美团网，和大众点评网合并后改为现在的名字。', ['互联网', 'IT'])
         ];
+    }
+
+    create() {
+        this.router.navigateByUrl('/stock/0');
+    }
+
+    update(stock: Stock) {
+        this.router.navigateByUrl('/stock/' + stock.id);
     }
 
 }

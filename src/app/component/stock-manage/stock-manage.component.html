@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <a class="btn btn-sm btn-primary">
+        <a class="btn btn-sm btn-primary" (click)="create()">
             <i class="glyphicon glyphicon-plus"></i>
             增加
         </a>
@@ -32,7 +32,7 @@
                 </td>
                 <td>{{ stock.desc }}</td>
                 <td>
-                    <a class="btn btn-xs btn-warning">
+                    <a class="btn btn-xs btn-warning" (click)="update(stock)">
                         <i class="glyphicon glyphicon-pencil"></i>
                         编辑
                     </a>
