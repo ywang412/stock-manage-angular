@@ -9,6 +9,11 @@ import {FooterComponent} from './component/footer/footer.component';
 import {ContentComponent} from './component/content/content.component';
 import {StockManageComponent} from './component/stock-manage/stock-manage.component';
 import {StarsComponent} from './component/stars/stars.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+    {path: 'stock', component: StockManageComponent}
+];
 
 @NgModule({
     declarations: [
@@ -22,7 +27,8 @@ import {StarsComponent} from './component/stars/stars.component';
         StarsComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        RouterModule.forRoot(routes)
     ],
     providers: [],
     bootstrap: [AppComponent]
