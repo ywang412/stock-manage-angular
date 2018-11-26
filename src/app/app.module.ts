@@ -10,8 +10,11 @@ import {ContentComponent} from './component/content/content.component';
 import {StockManageComponent} from './component/stock-manage/stock-manage.component';
 import {StarsComponent} from './component/stars/stars.component';
 import {RouterModule, Routes} from '@angular/router';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 const routes: Routes = [
+    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    {path: 'dashboard', component: DashboardComponent},
     {path: 'stock', component: StockManageComponent}
 ];
 
@@ -24,7 +27,8 @@ const routes: Routes = [
         FooterComponent,
         ContentComponent,
         StockManageComponent,
-        StarsComponent
+        StarsComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,
