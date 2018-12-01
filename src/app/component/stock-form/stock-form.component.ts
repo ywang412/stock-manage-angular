@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Stock} from '../../model/stock';
+import {ActivatedRoute, Router} from '@angular/router';
+import {StockService} from '../../service/stock.service';
 
 @Component({
     selector: 'app-stock-form',
@@ -8,13 +10,23 @@ import {Stock} from '../../model/stock';
 })
 export class StockFormComponent implements OnInit {
 
-    stock: Stock;
+    public stock: Stock;
 
-    constructor() {
+    constructor(private router: Router,
+                private routeInfo: ActivatedRoute,
+                private stockService: StockService) {
     }
 
     ngOnInit() {
-        this.stock = new Stock(1, '腾讯控股', 1.99, 3.5, '深圳市腾讯计算机系统有限公司成立于1998年11月，由马化腾、张志东、许晨晔、陈一丹、曾李青五位创始人共同创立。', ['互联网', 'IT']);
+        const stockId = this.routeInfo.snapshot.params['id'];
+        this.stock = this.stockService.getStockById(stockId);
     }
 
+    cancel() {
+        this.router.navigateByUrl('/stock');
+    }
+
+    save() {
+        this.router.navigateByUrl('/stock');
+    }
 }
